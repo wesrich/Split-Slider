@@ -26,17 +26,17 @@ The default options are:
 var defaults = {
 	numVisible: 5,						// Includes middle slide, if used.
 	width: 168,							// Element width, do not include borders.
-	height: 220,
+	height: 220,						// Element height, not including borders.
 	borderWidth: 2,						// Border width, if any. (Total for left + right border.)
-	leftArrow: 'arrow_left.png',
-	rightArrow: 'arrow_right.png',
-	showMiddle: true,
-	middleDiv: '.middle-slide',
-	slideList: '.slides',
+	leftArrow: 'arrow_left.png',		// <img src> for Left side arrow image.
+	rightArrow: 'arrow_right.png',		// <img src> for Right side arrow image.
+	showMiddle: true,					// Show a static, non-moving middle element.
+	middleDiv: '.middle-slide',			// ID/Class name for element containing static, non-moving middle, if used.
+	slideList: '.slides',				// ID/Class name for element containing moving slides.
 	slideOutOverflow: 40,				// Pixels to slide past the outside of our slider.
-	slideEasing: 'linear',
-	autoSlide: false,
+	slideEasing: 'linear',				// Easing functionality - untested, but there's no real reason it shouldn't work?
+	autoSlide: false,					// Turn Auto-Slide on/off
 	autoSlideTimeout: 4000,				// Time between automagic slide transitions.
-	duration: 1200
+	duration: 1200						// Length of animation
 }
 ```
