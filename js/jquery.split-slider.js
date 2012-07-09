@@ -136,20 +136,20 @@
 			});
 			
 			this.find("#nav-left").css({
-				height: options.height+'px',
-				float: "left",
-				display: "table"
+				'height': options.height+'px',
+				'float': "left",
+				'display': "table"
 			}).find("a").css({
-				display: "table-cell",
-				verticalAlign: "middle"
+				'display': "table-cell",
+				'vertical-align': "middle"
 			});
 			this.find("#nav-right").css({
-				height: options.height+'px',
-				float: "right",
-				display: "table"
+				'height': options.height+'px',
+				'float': "right",
+				'display': "table"
 			}).find("a").css({
-				display: "table-cell",
-				verticalAlign: "middle"
+				'display': "table-cell",
+				'vertical-align': "middle"
 			});
 			
 			// Create divs for slides.
