@@ -1,0 +1,4 @@
+#split-slider-demo { overflow: hidden; }
+#split-slider-demo div.slide { border: 1px solid transparent; width: 214px; text-align: center; }
+#split-slider-demo div.slide.left { border-right: 1px dotted #b1953a; }
+#split-slider-demo div.slide.right { border-left: 1px dotted #b1953a; }

@@ -1,0 +1,53 @@
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video { margin:0; padding:0; border:0; outline:0; font-size:100%; vertical-align:baseline; background:transparent; }
+
+body { background-color: transparent; /* So color or background can be set on the html element */ line-height: 1; }
+article,aside,canvas,details,figcaption,figure, footer,header,hgroup,menu,nav,section,summary { display:block; }
+nav ul { list-style:none; }
+blockquote, q { quotes:none; }
+blockquote:before, blockquote:after, q:before, q:after { content:''; content:none; }
+a { margin:0; padding:0; border:0; font-size:100%; vertical-align:baseline; background:transparent; }
+ins { background-color:#ff9; color:#000; text-decoration:none; }
+mark { background-color:#ff9; color:#000; font-style:italic; font-weight:bold; }
+del { text-decoration: line-through; }
+abbr[title], dfn[title] { border-bottom:1px dotted #000; cursor:help; }
+table { border-collapse:collapse; border-spacing:0; }
+hr { display:block; height:1px; border:0; border-top:1px solid #cccccc; margin:1em 0; padding:0; }
+input, select { vertical-align:middle; }
+:focus { outline: none; }
+
+body { background: #497a04 url('http://www.thinkpyxl.com/blog/wp-content/themes/arthemia/images/readpyxl_design_marketing_bg.jpg') center top no-repeat; color: #333; font-family: 'Arial', 'Verdana', sans-serif; font-size: 12px; line-height: 16px; }
+
+header, nav, footer, .content { width: 960px; margin: 0 auto; }
+.content { background: #ddd; padding: 10px; width: 940px; }
+.content > section { background: #fff; width: 900px; padding: 20px; }
+
+h1, h2, h3, h4, h5, h6 { font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; }
+h1 { font-size: 60px; line-height: 64px; font-weight: bold; margin: 0px 0px 20px 0px; }
+h2 {  }
+h3 {  }
+h4 {  }
+h5 {  }
+h6 {  }
+
+pre { margin: 16px 30px; white-space: pre; border: 1px solid #ddd; padding: 20px; }
+code { background: #eee; border: 1px solid #ddd; padding: 2px 5px; white-space: pre; }
+p { margin: 16px 0px; }
+ul { list-style: disc outside none; margin: 0px 0px 0px 20px; }
+ul > li { margin: 16px 0px; }
+
+.options-list, .features-list { list-style: none outside none; margin: 0px; }
+.options-list .title, .features-list .title { color: #497a04; font-size: 14px; font-weight: bold; }
+.options-list ul, .features-list ul { display: none; }
+
+#disable-auto-slide { display: none; }

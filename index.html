@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Split Slider - jQuery Slider</title>
+	<link rel="icon" href="http://www.thinkpyxl.com/favicon.ico" />
+	<link rel="shortcut icon" href="http://www.thinkpyxl.com/favicon.ico" />
+
+	<link href="css/pagestyles.css" rel="stylesheet" type="text/css" />
+	<link href="css/jquery.split-slider.css" rel="stylesheet" type="text/css" />
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+	<script src="js/jquery.split-slider.js" type="text/javascript"></script>
+	
+	<script type="text/javascript">
+(function($) {
+	$(function() {
+	// Example initializer for Split Slider
+		mySlider = $("#split-slider-demo").splitSlider({
+			leftArrow: 'images/arrow_left.jpg',
+			rightArrow: 'images/arrow_right.jpg'
+		});
+	// End example initializer for Split Slider
+		$(".expand-list").click(function(e) {
+			e.preventDefault();
+			$(this).parent().find(">ul").slideToggle();
+		});
+		$("#enable-auto-slide").click(function(e) {
+			e.preventDefault();
+			mySlider.autoSlide();
+			$(this).hide();
+			$("#disable-auto-slide").show();
+		});
+		$("#disable-auto-slide").click(function(e) {
+			e.preventDefault();
+			mySlider.autoSlide(false);
+			$(this).hide();
+			$("#enable-auto-slide").show();
+		});
+	});
+})(jQuery);
+	</script>
+</head>
+<body>
+	<header>
+		<a href="http://www.thinkpyxl.com/"><img src="http://www.thinkpyxl.com/assets/templates/pyxl/images/pyxl_logo.png" alt="Pyxl" /></a>
+	</header>
+	<nav>
+	</nav>
+	<section class="content">
+		<section class="main-content">
+			<h1>Split Slider Demo</h1>
+			<div id="split-slider-demo">
+				<div class="middle-slide">
+					<img src="http://dummyimage.com/164x220/ededed/000.png&text=Split+Slider+Demo" alt="" />
+				</div>
+				<ul class="slides">
+					<li><img src="http://dummyimage.com/164x220/e6e6e6/000.png" alt="" /></li>
+					<li><img src="http://dummyimage.com/164x220/e6e6e6/000.png" alt="" /></li>
+					<li><img src="http://dummyimage.com/164x220/e6e6e6/000.png" alt="" /></li>
+					<li><img src="http://dummyimage.com/164x220/e6e6e6/000.png" alt="" /></li>
+				</ul>
+			</div>
+			<p><a href="#" id="enable-auto-slide">Enable Auto-Slide</a><a href="#" id="disable-auto-slide">Disable Auto-Slide</a></p>
+			<p>This demo of Split Slider was initialized with the following script:</p>
+			<pre>mySlider = $("#split-slider-demo").splitSlider({
+	leftArrow: 'images/arrow_left.jpg',
+	rightArrow: 'images/arrow_right.jpg'
+});</pre>
+			<p>The simplest version of the slider can be defined with this call:</p>
+			<pre>$("#split-slider-demo").splitSlider();</pre>
+			<p>This plugin was developed on jQuery 1.7.1.</p>
+			<p>A complete list of all available options follows:</p>
+			<ul class="options-list">
+				<li><span class="title">Defining Your Elements</span>: (<a href="#" class="expand-list">Expand</a>)
+					<ul>
+						<li>
+							<strong>Number of Elements</strong> - The total number of elements to be displayed at a time. This includes the "middle" element, if used, but not the arrows.<br />
+							<em>(Expected: Integer)</em>
+							<pre>numVisible: 5</pre>
+						</li>
+						<li>
+							<strong>Show a "Middle" Element</strong> - If you want a static "middle" element, set this to true. Otherwise, set to false.<br />
+							<em>(Expected: Boolean)</em>
+							<pre>showMiddle: true</pre>
+						</li>
+						<li>
+							<strong>Middle Slide Element</strong> - The element identifier used to find the pre-defined "middle" element. (Currently, this must be a child of the element you call the plugin on.)<br />
+							<em>(Expected: String)</em>
+							<pre>middleDiv: '.middle-slide'</pre>
+						</li>
+						<li>
+							<strong>List of Slide Elements</strong> - The identifier of the container element which holds all of the slides as its direct children. (Tested with a &lt;ul&gt; list, but it should work with &lt;div&gt;s as well.)<br />
+							<em>(Expected: String)</em>
+							<pre>slideList: '.slides'</pre>
+						</li>
+					</ul>
+				</li>
+				<li><span class="title">Slide Styles</span>: (<a href="#" class="expand-list">Expand</a>)
+					<ul>
+						<li>
+							<strong>Element Width</strong> - The width of the output &lt;div&gt; elements. This is an inline style provided by the plugin for each ".slide" element.<br />
+							<em>(Unit of Measure: px, Expected: Integer)</em>
+							<pre>width: 168</pre>
+						</li>
+						<li>
+							<strong>Element Height</strong> - The height of the output &lt;div&gt; elements. This is an inline style provided by the plugin for each ".slide" element.<br />
+							<em>(Unit of Measure: px, Expected: Integer)</em>
+							<pre>height: 220</pre>
+						</li>
+						<li>
+							<strong>Border Width</strong> - The total width of left and right side borders on each ".slide" element. No borders are provided by the plugin, but this value will help take into account any borders you provide in your styles. (The default stylesheet provided with this plugin includes a 1px transparent border around all ".slide" elements, and a 1px dotted border between elements [which replaces the transparent border on that side].)<br />
+							<em>(Unit of Measure: px, Expected: Integer)</em>
+							<pre>borderWidth: 2</pre>
+						</li>
+					</ul>
+				</li>
+				<li><span class="title">Navigation Arrows</span>: (<a href="#" class="expand-list">Expand</a>)
+					<ul>
+						<li>
+							<strong>Left Arrow Image</strong> - The relative URL to the image you wish to use for the Left Arrow. (This is placed directly into an image tag, so it should be relative to the HTML page, not the plugin directory.)<br />
+							<em>(Expected: String)</em>
+							<pre>leftArrow: 'arrow_left.png'</pre>
+						</li>
+						<li>
+							<strong>Right Arrow Image</strong> - The relative URL to the image you wish to use for the Right Arrow. (This is placed directly into an image tag, so it should be relative to the HTML page, not the plugin directory.)<br />
+							<em>(Expected: String)</em>
+							<pre>rightArrow: 'arrow_right.png'</pre>
+						</li>
+					</ul>
+				</li>
+				<li><span class="title">Animation Effects</span>: (<a href="#" class="expand-list">Expand</a>)
+					<ul>
+						<li>
+							<strong>Duration</strong> - The amount of time it takes for the element to slide out or back in. (By default, it takes 1200ms to slide out, and another 1200ms to slide back in.<br />
+							<em>(Unit of Measure: ms, Expected: Integer)</em>
+							<pre>duration: 1200</pre>
+						</li>
+						<li>
+							<strong>Easing</strong> - Easing function to use for the animation. (Currently, this has not been tested to see if it works with jQuery UI Easing, but there's no real reason it shouldn't.)<br />
+							<em>(Expected: String)</em>
+							<pre>slideEasing: 'linear'</pre>
+						</li>
+						<li>
+							<strong>Animation Overflow</strong> - The slides will animate this many pixels outside the container, allowing a small window of time that no slides are visible during the animation time.<br />
+							<em>(Unit of Measure: px, Expected: Integer)</em>
+							<pre>slideOutOverflow: 40</pre>
+						</li>
+						<li>
+							<strong>Auto Slide</strong> - Should the slider automatically trigger the slide animation periodically? (The auto slide functionality will be paused if a user hovers over the slider container.)<br />
+							<em>(Expected: Boolean)</em>
+							<pre>autoSlide: false</pre>
+						</li>
+						<li>
+							<strong>Auto Slide Wait Time</strong> - The amount of time after the slide animation stops before the next begins, when Auto Slide is active.<br />
+							<em>(Unit of Measure: ms, Expected: Integer)</em>
+							<pre>autoSlideTimeout: 4000</pre>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<p>And, finally, an explanation of some of the features included in this plugin! (And some extra tricks!)</p>
+			<ul class="features-list">
+				<li><span class="title">Features</span>: (<a href="#" class="expand-list">Expand</a>)
+					<ul>
+						<li>
+							<strong>Static Middle Element (optional)</strong>
+							<p>The initial purpose of the script was to have a central element that stayed in one place, with an even number of items on either side which slide outward and off the page, to be replaced with the next set of items.</p>
+						</li>
+						<li>
+							<strong>Even or Odd Amount of Elements</strong>
+							<p>The tasks handled by the plugin soon grew to include being able to move all elements (half, rounded up, on the left; half, rounded down, on the right).</p>
+							<p>With this in place, we further allowed an even number of elements to be displayed. In this case, half of the items go in each direction.</p>
+						</li>
+						<li>
+							<strong>Auto-Slide</strong>
+							<p>Because, after all, what jQuery Slider plugin is ever complete without automatic sliding as an option?!</p>
+						</li>
+						<li>
+							<strong>Looking to the Future....</strong>
+							<p>Future iterations of this plugin may include features such as the ability to slide up/down instead of left/right and more! Please feel free to <a href="https://github.com/phpwes/Split-Slider/issues">suggest some features</a>!</p>
+						</li>
+					</ul>
+				</li>
+				<li><span class="title">Extras</span>: (<a href="#" class="expand-list">Expand</a>)
+					<ul>
+						<li>
+							<strong>Programmatically Slide Left/Right</strong>
+							<p>If you have defined the Slider as in the first example, you can now reference <code>mySlider</code> with a limited selection of functions. This includes the ability to programmatically "click" the left and right arrows.</p>
+							<pre>mySlider.slideLeft();		// Simulates clicking the "Left" arrow.
+mySlider.slideRight();		// Simulates clicking the "Right" arrow.</pre>
+						</li>
+						<li>
+							<strong>Enabling Auto-Slide (after page load)</strong>
+							<p>When we were looking to add the Auto-Slide function to this plugin, we determined that you should not only be able to slide left or right programmatically, but you should also be able to enable and disable Auto-Slide. This uses the slider variable defined when calling the Slider initially, as above.</p>
+							<pre>	// These both start Auto-Slide, if it's not activate already.
+mySlider.autoSlide();
+mySlider.autoSlide(true);
+
+	// And this turns it off.
+mySlider.autoSlide(false);</pre>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</section>
+	</section>
+	<footer>
+	</footer>
+</body>
+</html>
