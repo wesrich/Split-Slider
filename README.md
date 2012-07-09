@@ -40,3 +40,29 @@ var defaults = {
 	duration: 1200						// Length of animation
 }
 ```
+
+Advanced Usage
+--------------------------------------
+Storing the slider as a variable can allow for calling some additional functions.
+```js
+mySlider = $("#split-slider-demo").splitSlider({
+	leftArrow: 'images/arrow_left.jpg',
+	rightArrow: 'images/arrow_right.jpg'
+});
+```
+
+The plugin provides the ability to programatically simulate clicking on the left / right arrows:
+```js
+mySlider.slideLeft();		// Simulates clicking the "Left" arrow.
+mySlider.slideRight();		// Simulates clicking the "Right" arrow.
+```
+
+In addition, the ability to turn on or off Auto-Slide is available:
+```js
+	// These both start Auto-Slide, if it's not activate already.
+mySlider.autoSlide();
+mySlider.autoSlide(true);
+
+	// And this turns it off.
+mySlider.autoSlide(false);
+```
